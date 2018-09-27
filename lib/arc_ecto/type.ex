@@ -6,6 +6,10 @@ defmodule Arc.Ecto.Type do
 
   @filename_with_timestamp ~r{^(.*)\?(\d+)$}
   
+  def cast(_definition, %Plug.Upload{content_type: content_type, filename: filename, path: path}) do
+    {:ok, %{file_name: filename, content_type: content_type, path: path}}
+  end
+
   def cast(definition, %{file_name: file, updated_at: updated_at}) do
     cast(definition, %{"file_name" => file, "updated_at" => updated_at})
   end
