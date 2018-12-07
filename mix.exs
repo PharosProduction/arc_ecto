@@ -43,6 +43,7 @@ defmodule Arc.Ecto.Mixfile do
     [
       {:arc,  "~> 0.11.0"},
       {:ecto, "~> 2.1 or ~> 3.0"},
+      {:plug, "~> 1.7"},
       {:mock, "~> 0.3.0", only: :test},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
